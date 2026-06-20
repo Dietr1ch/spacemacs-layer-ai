@@ -1,0 +1,71 @@
+#+TITLE: ai layer
+#+TAGS: layer|web service
+
+# The maximum height of the logo should be 200 pixels.
+[[img/ai.png]]
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+  - [[#agent-shell][~agent-shell~]]
+  - [[#minuet][~minuet~]]
+    - [[#insert-mode-shortcuts][insert-mode shortcuts]]
+
+* Description
+This layer adds support for some AI packages,
+- [[https://github.com/xenodium/agent-shell][~agent-mode~]]
+- [[https://github.com/milanglacier/minuet-ai.el][~minuet~]]
+
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =ai= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+
+* Key bindings
+
+| Key Binding | Description |
+|-------------+-------------|
+| ~SPC $~     | AI          |
+| ~SPC $ $~   | agent-shell |
+| ~SPC $ m~   | minuet      |
+
+
+
+** ~agent-shell~
+| Key Binding   | Description             |
+|---------------+-------------------------|
+| ~SPC $ $ $~   | ~agent-shell~           |
+| ~SPC $ $ n~   | ~agent-shell-new-shell~ |
+| ~SPC $ $ t~   | ~agent-shell-toggle~    |
+| ~SPC $ $ s~   | send                    |
+| ~SPC $ $ s d~ | send dwim               |
+| ~SPC $ $ s f~ | send file               |
+| ~SPC $ $ s i~ | send clipboard image    |
+| ~SPC $ $ s r~ | send region             |
+| ~SPC $ $ s s~ | send screenshot         |
+
+** ~minuet~
+| Key Binding | Description                       |
+|-------------+-----------------------------------|
+| ~SPC $ m m~ | ~minuet-active-mode~              |
+| ~SPC $ m s~ | ~minuet-show-suggestion~          |
+| ~SPC $ m c~ | ~minuet-complete-with-minibuffer~ |
+| ~SPC $ m C~ | ~minuet-configure-provider~       |
+
+
+*** insert-mode shortcuts
+These shortcuts become available while writing in evil's ~insert-mode~,
+
+| Shortcut          | Binding                         |
+|-------------------+---------------------------------|
+| ~<right>~         | ~minuet-accept-suggestion~      |
+| ~C-<return>~      | ~minuet-accept-suggestion~      |
+| ~C-DEL~           | ~minuet-dismiss-suggestion~     |
+| ~C-<tab>~         | ~minuet-next-suggestion~        |
+| ~C-<iso-lefttab>~ | ~minuet-previous-suggestion~    |
+| ~C-<left>~        | ~minuet-dismiss-suggestion~     |
+| ~C-<right~        | ~minuet-accept-suggestion-line~ |
