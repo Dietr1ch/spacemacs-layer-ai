@@ -29,6 +29,7 @@
 	"$$$" 'agent-shell
 	"$$n" 'agent-shell-new-shell
 	"$$t" 'agent-shell-toggle
+	"$$c" 'agent-shell-prompt-compose
 	)
 (spacemacs/declare-prefix "$$s" "send")
 (spacemacs/set-leader-keys
